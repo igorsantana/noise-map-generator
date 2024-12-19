@@ -24,8 +24,11 @@ const paintMap = (
   freq: number
 ) => {
   const { map } = generateNoiseMap(size, freq, 200, 1, 6, 0.5, 2);
+
   const scaleFn = scale([-1, 1], [0, 1]);
+
   const scaledMap = map.map((vx) => vx.map((vy) => scaleFn(vy)));
+
   scaledMap.forEach((yArr, xIx) => {
     yArr.forEach((v, yIx) => {
       ctx.fillStyle = color(v);
@@ -40,16 +43,17 @@ export default function NoiseMap() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    canvas.width = 512;
-    canvas.height = 512;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    canvas.width = 512;
+    canvas.height = 512;
     paintMap(ctx, 512, 1);
   }, [canvasRef]);
 
   return (
     <main className="w-9/12 h-screen">
-      <canvas ref={canvasRef} className="w-full	h-full"/>
+      <canvas ref={canvasRef} className="w-full	h-full" />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import "./App.css";
-import Form from "./lib/app/form";
-import NoiseMap from "./lib/app/noise-map";
+import Form from "./components/app/form";
+import NoiseMap from "./components/app/noise-map";
 import { MapProvider } from "./providers/map-provider";
 
 function App() {
