@@ -4,6 +4,7 @@ import { MapDispatchContext } from "@/contexts/map-context";
 import { useContext } from "react";
 import Sliders from "./components/sliders";
 import { Separator } from "@/components/ui/separator";
+import ColorSelector from "./components/color-selector";
 
 export default function FormPane() {
   const dispatch = useContext(MapDispatchContext);
@@ -32,7 +33,9 @@ export default function FormPane() {
               <Plus />
             </Button>
           </div>
-          <div className="flex items-center justify-between	"></div>
+          <div >
+            <ColorSelector />
+          </div>
         </>
       </div>
     </main>
